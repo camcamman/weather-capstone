@@ -25,15 +25,18 @@ export default function TenDayWeather () {
                 // forecastArray.push(response.data.forecast.forecastday)
                 // console.log(theItem)
                 forecastArray.push(theItem)
+                // console.log(forecastArray)
             })
+            // console.log(forecastArray)
         })
         .catch((error) => console.error(error))
+        console.log(forecastArray)
     }, [])
 
-    const killZip = useContext(weatherContext)
+    // const killZip = useContext(weatherContext)
     // console.log(forecastArray)
 
-    killZip.setStateFunctions.killingZipButtonFunction()
+    // killZip.setStateFunctions.killingZipButtonFunction()
     return(
         <div>
             <h1>ten day weather</h1>
