@@ -9,9 +9,14 @@ export default function App () {
         <div>
             <Head />
             <Router>
+            {/* <Link to="/tenDayWeather"><button onClick={enterZip}>Enter Zip</button></Link>  */}
+            {/* <Link to="/tenDayWeather"><button>Enter Zip</button></Link>  */}
                 <Routes>
                     <Route path="/" element={<Home />}/>
-                    <Route path="/tenDayWeather" element={<TenDayWeather />}/>
+                    {/* <Route path="/tenDayWeather" element={<TenDayWeather />}/> */}
+                    <Route path="/tenDayWeather/:zip" element={<TenDayWeather />}/>
+                    {/* <Route path="/tenDayWeather" state={{zip: zip}} element={<TenDayWeather />}/> */}
+                    {/* <Route path="/tenDayWeather/:zip" element={<TenDayWeather />}/> */}
                 </Routes>
             </Router>
         </div>

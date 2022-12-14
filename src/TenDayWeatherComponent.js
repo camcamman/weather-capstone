@@ -3,7 +3,7 @@ import React from "react";
 export default function TenDayWeatherComponent (props) {
     // console.log(props)
     // console.log(props.forecastArray)
-    
+
     const betterProps = props.forecastArray
     
     // const mappedBetterProps = betterProps.map((theItem) => console.log("worked"))
@@ -15,7 +15,7 @@ export default function TenDayWeatherComponent (props) {
 
         // console.log(theItem.date)
 
-        console.log(theItem)
+        // console.log(theItem)
         // console.log(theItem.day)
         // console.log(theItem.day.maxtemp_f)
         // console.log(theItem.day.maxtemp_f)
@@ -32,7 +32,7 @@ export default function TenDayWeatherComponent (props) {
         // console.log(theItem)
         // console.log(theItem.day)
         // console.log(theItem.day.condition)
-        console.log(theItem.day.condition.text)
+        // console.log(theItem.day.condition.text)
         return(
             <div>
                 <p>{theItem.date}</p>

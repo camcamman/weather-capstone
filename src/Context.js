@@ -17,6 +17,8 @@ function WeatherContextSetter (props) {
         updateZipStateFunction:
         function updateZipState (newObjectZip) {
             setZipState(newObjectZip)
+            // setZipState("5607")
+            console.log(newObjectZip)
         }
     }
 
@@ -25,7 +27,7 @@ function WeatherContextSetter (props) {
         value={{
             zipButtonState,
             setStateFunctions,
-            zipState
+            zipState,
         }}
         >
             {props.children}

@@ -1,5 +1,7 @@
 import React, {useContext, useState} from "react";
+import { Link } from "react-router-dom";
 import { weatherContext } from "./Context";
+// import { createBrowserHistory } from "history";
 
 export default function Start () {
     const zipUpdate = useContext(weatherContext)
@@ -7,6 +9,8 @@ export default function Start () {
         zip:""
     })
 
+    // console.log(zipUpdate)
+    // console.log(tempZipState)
     // console.log(zipUpdate.zipState.Zip)
     // console.log(zipUpdate.zipState.zip)
     // console.log(zipUpdate.setStateFunctions.updateZipStateFunction)
@@ -19,24 +23,36 @@ export default function Start () {
                 zip: value
             }
         }))
-        console.log(tempZipState)
+        // console.log(tempZipState)
+        // console.log(tempZipState.zip)
     }
 
-    function handleSubmit (e) {
-        e.preventDefalut()
+    function enterZip () {
         zipUpdate.setStateFunctions.updateZipStateFunction(tempZipState.zip)
+        console.log(zipUpdate)
+        // history.push("./tenDayWeather/84003")
     }
+
+    // console.log(zipUpdate.setStateFunctions.updateZipStateFunction)
 
     return(
         <div>
-            <a href="/tenDayWeather"><button>Enter Zip</button></a>
+            {/* <a href="/tenDayWeather/:zip"><button onClick={enterZip}>Enter Zip</button></a> */}
+            {/* <a href="/tenDayWeather"><button onClick={enterZip}>Enter Zip</button></a> */}
+            {/* <Link to="/tenDayWeather"><button onClick={enterZip}>Enter Zip</button></Link>  */}
+            {/* <button onClick={enterZip}>Enter Zip</button> */}
+            {/* <Link to={`tenDayWeather/84003`}>test</Link> */}
+            {/* <Link to={`tenDayWeather/${tempZipState.zip}`}>test</Link> */}
+            <Link to={`tenDayWeather/${tempZipState.zip}`}><button>Enter Zip</button></Link>
 
-            <input 
-                type="number"
-                placeholder="Zip"
-                value={tempZipState.zip}
-                onChange={handleChange}
-            />
+            <form>
+                <input 
+                    type="number"
+                    placeholder="Zip"
+                    value={tempZipState.zip}
+                    onChange={handleChange}
+                />
+            </form>
         </div>
     )
 }
