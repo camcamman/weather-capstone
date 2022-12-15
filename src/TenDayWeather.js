@@ -48,7 +48,7 @@ export default function TenDayWeather () {
     //     )
     // })
 
-    const test = forecastState.map((theItem) => {
+    const mappedForecast = forecastState.map((theItem) => {
         return(
             <Link to={`/OneDayWeather/${zip.zip}/${theItem.date}`}>
                 <div>
@@ -74,7 +74,7 @@ export default function TenDayWeather () {
     return(
         <div>
             {/* <h1>ten day weather</h1> */}
-            <div>{test}</div>
+            <div>{mappedForecast}</div>
             {/* <TenDayWeatherComponent 
             forecastArray = {forecastArray}/> */}
             {/* <div>{weatherLoadState}</div> */}
