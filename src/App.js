@@ -13,10 +13,20 @@ export default function App () {
             {/* <Link to="/tenDayWeather"><button>Enter Zip</button></Link>  */}
                 <Routes>
                     <Route path="/" element={<Home />}/>
+
                     {/* <Route path="/tenDayWeather" element={<TenDayWeather />}/> */}
-                    <Route path="/tenDayWeather/:zip" element={<TenDayWeather />}/>
+                    {/* <Route path="/tenDayWeather/:zip" element={<TenDayWeather />}/> */}
                     {/* <Route path="/tenDayWeather" state={{zip: zip}} element={<TenDayWeather />}/> */}
                     {/* <Route path="/tenDayWeather/:zip" element={<TenDayWeather />}/> */}
+
+                    {/* <Route path="/tenDayWeather/:zip" element={<TenDayWeather />}/>
+                    <Route path="/tenDayWeather/:zip">
+                        <Route index element={<TenDayWeather />} />
+                        <Route path="/OneDayWeather/:zip/:date"/>
+                    </Route> */}
+                    <Route path="/tenDayWeather/:zip" element={<TenDayWeather />}/>
+                    <Route path="/OneDayWeather/:zip/:date"/>
+
                 </Routes>
             </Router>
         </div>
