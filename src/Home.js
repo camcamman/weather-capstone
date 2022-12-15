@@ -1,10 +1,8 @@
 import React, {useContext, useState} from "react";
 import { Link } from "react-router-dom";
-import { weatherContext } from "./Context";
 // import { createBrowserHistory } from "history";
 
 export default function Start () {
-    const zipUpdate = useContext(weatherContext)
     const [tempZipState, setTempZipState] = useState({
         zip:""
     })
@@ -27,11 +25,11 @@ export default function Start () {
         // console.log(tempZipState.zip)
     }
 
-    function enterZip () {
-        zipUpdate.setStateFunctions.updateZipStateFunction(tempZipState.zip)
-        console.log(zipUpdate)
-        // history.push("./tenDayWeather/84003")
-    }
+    // function enterZip () {
+    //     zipUpdate.setStateFunctions.updateZipStateFunction(tempZipState.zip)
+    //     console.log(zipUpdate)
+    //     // history.push("./tenDayWeather/84003")
+    // }
 
     // console.log(zipUpdate.setStateFunctions.updateZipStateFunction)
 

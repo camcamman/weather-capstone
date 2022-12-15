@@ -3,6 +3,7 @@ import Head from "./Head";
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import Home from "./Home";
 import TenDayWeather from "./TenDayWeather";
+import OneDay from "./OneDay";
 
 export default function App () {
     return(
@@ -25,7 +26,7 @@ export default function App () {
                         <Route path="/OneDayWeather/:zip/:date"/>
                     </Route> */}
                     <Route path="/tenDayWeather/:zip" element={<TenDayWeather />}/>
-                    <Route path="/OneDayWeather/:zip/:date"/>
+                    <Route path="/OneDayWeather/:zip/:date" element={<OneDay/>}/>
 
                 </Routes>
             </Router>

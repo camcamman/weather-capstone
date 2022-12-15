@@ -1,8 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 // import { weatherContext } from "./Context";
-import TenDayWeatherComponent from "./TenDayWeatherComponent"
 import axios from 'axios';
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function TenDayWeather () {
     // const getZip = useContext(weatherContext)
@@ -51,20 +50,22 @@ export default function TenDayWeather () {
 
     const test = forecastState.map((theItem) => {
         return(
-            <div>
-                <p>{theItem.date}</p>
-                <img src={theItem.day.condition.icon}/>
+            <Link to={`/OneDayWeather/${zip.zip}/${theItem.date}`}>
                 <div>
-                    <p>{theItem.day.condition.text}</p>
+                    <p>{theItem.date}</p>
+                    <img src={theItem.day.condition.icon}/>
+                    <div>
+                        <p>{theItem.day.condition.text}</p>
 
-                    <p>Max {theItem.day.maxtemp_f}° fahrenheit</p>
-                    <p>Average {theItem.day.avgtemp_f}° fahrenheit</p>
-                    <p>Min {theItem.day.mintemp_f}° fahrenheit</p>
+                        <p>Max {theItem.day.maxtemp_f}° fahrenheit</p>
+                        <p>Average {theItem.day.avgtemp_f}° fahrenheit</p>
+                        <p>Min {theItem.day.mintemp_f}° fahrenheit</p>
 
-                    <p>Chance of rain {theItem.day.daily_chance_of_rain}%</p>
-                    <p>Chance of snow {theItem.day.daily_chance_of_snow}%</p>
+                        <p>Chance of rain {theItem.day.daily_chance_of_rain}%</p>
+                        <p>Chance of snow {theItem.day.daily_chance_of_snow}%</p>
+                    </div>
                 </div>
-            </div>
+            </Link>
         )
     })
 
@@ -72,7 +73,7 @@ export default function TenDayWeather () {
 
     return(
         <div>
-            <h1>ten day weather</h1>
+            {/* <h1>ten day weather</h1> */}
             <div>{test}</div>
             {/* <TenDayWeatherComponent 
             forecastArray = {forecastArray}/> */}
