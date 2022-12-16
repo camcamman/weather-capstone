@@ -59,7 +59,7 @@ export default function TenDayWeather () {
     return(
         <div>
             <Link to="/">
-                <button className="oneDayWeatherZipButton">Re Enter Zip</button>
+                <button className="oneDayWeatherZipButton buttonTransition">Re Enter Zip</button>
             </Link> 
             <div className="tenDayWeatherMainDiv">{mappedForecast}</div>
         </div>

@@ -20,7 +20,7 @@ export default function Start () {
         <div className="homeButtonDiv">
             <Link 
                 to={`tenDayWeather/${tempZipState.zip}`}>
-                <button className="homeButton">Search</button>
+                <button className="homeButton buttonTransition">Search</button>
             </Link>
 
             <form className="homeForm">

@@ -34,10 +34,10 @@ export default function OneDay () {
         const betterTime = item.time.split(" ");
         
         return(
-            <div>
-                <img src={item.condition.icon}/>
-                <p>{betterTime[1]}</p>
-                <p>{item.condition.text}</p>
+            <div className="OneDayMappedMainDiv">
+                <img className="oneDayIcon" src={item.condition.icon}/>
+                <p className="oneDayTime">{betterTime[1]}</p>
+                <p className="oneDayMainText">{item.condition.text}</p>
                 <p>The temperature is {item.temp_f}° fahrenheit</p>
                 <p>Wind chill {item.windchill_f}° fahrenheit</p>
             </div>
@@ -47,10 +47,10 @@ export default function OneDay () {
     return(
         <div>
             <Link to={`/tenDayWeather/${zipDate.zip}`}>
-            <button>Go Back</button>
+            <button className="oneDayMainButton buttonTransition">Go Back</button>
             </Link>
-            <p>{zipDate.date}</p>
-            <div>
+            <p className="oneDayMainDate">{zipDate.date}</p>
+            <div className="oneDayMainDiv">
                 {mappedOneDay}
             </div>  
         </div>
