@@ -17,19 +17,20 @@ export default function Start () {
     }
 
     return(
-        <div className="homeButtonDiv">
+        <div>
+            <p>Sorry, it seams that the zip is wrong</p>
+
             <Link 
                 to={`tenDayWeather/${tempZipState.zip}`}>
-                <button className="homeButton">Enter Zip</button>
+                <button>Enter Zip</button>
             </Link>
 
-            <form className="homeForm">
+            <form>
                 <input 
                     type="number"
                     placeholder="Zip"
                     value={tempZipState.zip}
                     onChange={handleChange}
-                    className="homeFormInput"
                 />
             </form>
         </div>
