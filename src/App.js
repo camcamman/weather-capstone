@@ -4,7 +4,6 @@ import Head from "./Head";
 import Home from "./Home";
 import TenDayWeather from "./TenDayWeather";
 import OneDay from "./OneDay";
-import WrongZip from "./WrongZip"
 
 export default function App () {
     return(
@@ -13,7 +12,6 @@ export default function App () {
             <Router>
                 <Routes>
                     <Route path="/" element={<Home />}/>
-                    <Route path="/wrongZip" element={<WrongZip />}/>
                     <Route path="/tenDayWeather/:zip" element={<TenDayWeather />}/>
                     <Route path="/OneDayWeather/:zip/:date" element={<OneDay/>}/>
                 </Routes>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { redirect, useParams } from "react-router-dom";
+import { Link, redirect, useParams } from "react-router-dom";
 
 export default function OneDay () {
     const zipDate = useParams()
@@ -46,6 +46,9 @@ export default function OneDay () {
 
     return(
         <div>
+            <Link to={`/tenDayWeather/${zipDate.zip}`}>
+            <button>Go Back</button>
+            </Link>
             <p>{zipDate.date}</p>
             <div>
                 {mappedOneDay}

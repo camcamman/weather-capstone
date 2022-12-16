@@ -1,3 +1,4 @@
+/* head */
 .headImg{
     height: 150px;
 }
@@ -9,6 +10,164 @@
     font-size: 50px;
 }
 
+/* body */
 body {
     background-color: #00B2FF;
+}
+
+/* homePage */
+.homeForm{
+    display: flex;
+    justify-content: center;
+}
+
+.homeFormInput{
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+
+    margin-top: 150px;
+
+    background-color: #FFF344;
+}
+
+.homeButtonDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.homeButton{
+    position: absolute;
+
+
+    width: 600px;
+    height: 100px;
+
+    top: 400px;
+    left: 28%;
+
+    border: solid black 3px;
+    background-color: #FFF344;
+
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    /* color: #fff; */
+    /* background-color: #04AA6D; */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+      
+.homeButton:hover {background-color: #EAD949}
+    
+.homeButton:active {
+    background-color: #F3E990;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.WrongZipText{
+    position: absolute;
+    font-size: 30px;
+    background-color: red;
+    margin-left: 30.5%;
+}
+
+/* 10dayWeatherPage */
+
+.tenDayWeatherMainDiv{
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 80px;
+}
+
+.tenDayWeatherSmallDiv{
+    border: white solid 5px;
+    text-align: center;
+    width: 250px;
+    height: 410px;
+}
+
+.tenDayWeatherDate{
+    font-size: 24px;
+}
+
+.tenDayWeathIcon{
+    width: 110px;
+}
+
+.tenDayWeatherCondition{
+    font-weight: 700;
+}
+
+.oneDayWeatherZipButton{
+    position: absolute;
+
+    top: 32px;
+    left: 572px;
+
+    width: 150px;
+    height: 100px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    background-color: yellow;
+    border: solid black 2.3px;
+
+    padding: 15px 25px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    /* color: #fff; */
+    /* background-color: #04AA6D; */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+  
+.oneDayWeatherZipButton:hover {background-color: #EAD949}
+    
+.oneDayWeatherZipButton:active {
+    background-color: #F3E990;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+/* links */
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    /* text-decoration: underline; */
+    background-color: #0E459B;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
+
+a:active {
+    color: black;
 }

@@ -31,18 +31,18 @@ export default function TenDayWeather () {
         })
         .catch((error) => {
             console.error(error)
-            navigate("/wrongZip")
+            navigate("/")
     })
     }, [])
 
     const mappedForecast = forecastState.map((theItem) => {
         return(
             <Link to={`/OneDayWeather/${zip.zip}/${theItem.date}`}>
-                <div>
-                    <p>{theItem.date}</p>
-                    <img src={theItem.day.condition.icon}/>
+                <div className="tenDayWeatherSmallDiv">
+                    <p className="tenDayWeatherDate">{theItem.date}</p>
+                    <img className="tenDayWeathIcon" src={theItem.day.condition.icon}/>
                     <div>
-                        <p>{theItem.day.condition.text}</p>
+                        <p className="tenDayWeatherCondition">{theItem.day.condition.text}</p>
 
                         <p>Max {theItem.day.maxtemp_f}° fahrenheit</p>
                         <p>Average {theItem.day.avgtemp_f}° fahrenheit</p>
@@ -58,7 +58,10 @@ export default function TenDayWeather () {
 
     return(
         <div>
-            <div>{mappedForecast}</div>
+            <Link to="/">
+                <button className="oneDayWeatherZipButton">Re Enter Zip</button>
+            </Link> 
+            <div className="tenDayWeatherMainDiv">{mappedForecast}</div>
         </div>
     )
 }
