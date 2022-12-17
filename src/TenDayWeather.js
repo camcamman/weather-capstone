@@ -37,19 +37,21 @@ export default function TenDayWeather () {
 
     const mappedForecast = forecastState.map((theItem) => {
         return(
-            <Link to={`/OneDayWeather/${zip.zip}/${theItem.date}`}>
-                <div className="tenDayWeatherSmallDiv">
-                    <p className="tenDayWeatherDate">{theItem.date}</p>
-                    <img className="tenDayWeathIcon" src={theItem.day.condition.icon}/>
-                    <div>
-                        <p className="tenDayWeatherCondition">{theItem.day.condition.text}</p>
+            <Link className="tenDayLinkToOneDayWeather" to={`/OneDayWeather/${zip.zip}/${theItem.date}`}>
+                <div className="mobleMargin">
+                    <div className="tenDayWeatherSmallDiv">
+                        <p className="tenDayWeatherDate">{theItem.date}</p>
+                        <img className="tenDayWeathIcon" src={theItem.day.condition.icon}/>
+                        <div>
+                            <p className="tenDayWeatherCondition">{theItem.day.condition.text}</p>
 
-                        <p>Max {theItem.day.maxtemp_f}° fahrenheit</p>
-                        <p>Average {theItem.day.avgtemp_f}° fahrenheit</p>
-                        <p>Min {theItem.day.mintemp_f}° fahrenheit</p>
+                            <p>Max {theItem.day.maxtemp_f}° fahrenheit</p>
+                            <p>Average {theItem.day.avgtemp_f}° fahrenheit</p>
+                            <p>Min {theItem.day.mintemp_f}° fahrenheit</p>
 
-                        <p>Chance of rain {theItem.day.daily_chance_of_rain}%</p>
-                        <p>Chance of snow {theItem.day.daily_chance_of_snow}%</p>
+                            <p>Chance of rain {theItem.day.daily_chance_of_rain}%</p>
+                            <p>Chance of snow {theItem.day.daily_chance_of_snow}%</p>
+                        </div>
                     </div>
                 </div>
             </Link>
@@ -59,9 +61,13 @@ export default function TenDayWeather () {
     return(
         <div>
             <Link to="/">
-                <button className="oneDayWeatherZipButton buttonTransition">Re Enter Zip</button>
+                <div className="TenDayZipButtonDiv">
+                    <button className="oneDayWeatherZipButton buttonTransition">Re Enter Zip</button>
+                </div>
             </Link> 
-            <div className="tenDayWeatherMainDiv">{mappedForecast}</div>
+            <div className="tenDayWeatherMainDivHeadDiv">
+                <div className="tenDayWeatherMainDiv">{mappedForecast}</div>
+            </div>
         </div>
     )
 }
