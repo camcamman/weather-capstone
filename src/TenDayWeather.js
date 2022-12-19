@@ -11,7 +11,7 @@ export default function TenDayWeather () {
     const api = axios.create({
         baseURL: `http://api.weatherapi.com/v1`
     })
-    
+
     useEffect(() => {
         //would do 10 but the api only lets me do 3 day for free 
 
@@ -32,39 +32,42 @@ export default function TenDayWeather () {
         .catch((error) => {
             console.error(error)
             navigate("/")
-    })
+        })
     }, [])
 
     const mappedForecast = forecastState.map((theItem) => {
-        return(
-            <Link className="tenDayLinkToOneDayWeather" to={`/OneDayWeather/${zip.zip}/${theItem.date}`}>
+        return(<>
                 <div className="mobleMargin">
-                    <div className="tenDayWeatherSmallDiv">
-                        <p className="tenDayWeatherDate">{theItem.date}</p>
-                        <img className="tenDayWeathIcon" src={theItem.day.condition.icon}/>
-                        <div>
-                            <p className="tenDayWeatherCondition">{theItem.day.condition.text}</p>
-
-                            <p>Max {theItem.day.maxtemp_f}° fahrenheit</p>
-                            <p>Average {theItem.day.avgtemp_f}° fahrenheit</p>
-                            <p>Min {theItem.day.mintemp_f}° fahrenheit</p>
-
-                            <p>Chance of rain {theItem.day.daily_chance_of_rain}%</p>
-                            <p>Chance of snow {theItem.day.daily_chance_of_snow}%</p>
-                        </div>
-                    </div>
                 </div>
-            </Link>
+                <Link className="tenDayLinkToOneDayWeather" to={`/OneDayWeather/${zip.zip}/${theItem.date}`}>
+                        <div className="tenDayWeatherSmallDiv">
+                            <p className="tenDayWeatherDate">{theItem.date}</p>
+                            <img className="tenDayWeathIcon" src={theItem.day.condition.icon}/>
+                            <div>
+                                <p className="tenDayWeatherCondition">{theItem.day.condition.text}</p>
+
+                                <p>Max {theItem.day.maxtemp_f}° fahrenheit</p>
+                                <p>Average {theItem.day.avgtemp_f}° fahrenheit</p>
+                                <p>Min {theItem.day.mintemp_f}° fahrenheit</p>
+
+                                <p>Chance of rain {theItem.day.daily_chance_of_rain}%</p>
+                                <p>Chance of snow {theItem.day.daily_chance_of_snow}%</p>
+                            </div>
+                        </div>
+                </Link>
+            </>
         )
     })
 
     return(
         <div>
-            <Link to="/">
-                <div className="TenDayZipButtonDiv">
-                    <button className="oneDayWeatherZipButton buttonTransition">Re Enter Zip</button>
-                </div>
-            </Link> 
+            {/* <div className="TenDayZipButtonDivHead"> */}
+                <Link to="/">
+                    <div className="TenDayZipButtonDiv">
+                        <button className="oneDayWeatherZipButton buttonTransition">Re Enter Zip</button>
+                    </div>
+                </Link> 
+            {/* </div> */}
             <div className="tenDayWeatherMainDivHeadDiv">
                 <div className="tenDayWeatherMainDiv">{mappedForecast}</div>
             </div>

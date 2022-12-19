@@ -1,13 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Start () {
     const [tempZipState, setTempZipState] = useState({
         zip:""
     })
+    const navigate = useNavigate()
 
     function handleChange (e) {
-        const {value} = e.target
+        let {value} = e.target
+
+        // if(value === "1"){
+        //     value=""
+        // } else if(value === "2"){
+        //     value=""
+        // } else if(value === "3"){
+        //     value=""
+        // }
+
         setTempZipState((prevState => {
             return{
                 ...prevState,
@@ -16,22 +26,30 @@ export default function Start () {
         }))
     }
 
-    return(
-        <div className="homeButtonDiv">
-            <Link 
-                to={`tenDayWeather/${tempZipState.zip}`}>
-                <button className="homeButton buttonTransition">Search</button>
-            </Link>
+    function handleSubmit (e) {
+        e.preventDefault()
+            navigate(`tenDayWeather/${tempZipState.zip}`)
+        }
 
-            <form className="homeForm">
-                <input 
-                    type="number"
-                    placeholder="Zip"
-                    value={tempZipState.zip}
-                    onChange={handleChange}
-                    className="homeFormInput"
-                />
+    return(
+            <form className="homeForm" onSubmit={handleSubmit}>
+                <div className="flexCenter">
+                    <input 
+                        type="number"
+                        placeholder="Zip"
+                        value={tempZipState.zip}
+                        onChange={handleChange}
+                        className="homeFormInput"
+                        required
+                        />
+                    </div>
+
+                <div className="flexCenter">
+                    <input
+                        type="submit"
+                        className="homeButton buttonTransition"
+                    />
+                </div>
             </form>
-        </div>
     )
 }

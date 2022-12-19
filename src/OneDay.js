@@ -50,9 +50,11 @@ export default function OneDay () {
             <button className="oneDayMainButton buttonTransition">Go Back</button>
             </Link>
             <p className="oneDayMainDate">{zipDate.date}</p>
-            <div className="oneDayMainDiv">
-                {mappedOneDay}
-            </div>  
+            <div className="oneDayMainDivHeadDiv">
+                <div className="oneDayMainDiv">
+                    {mappedOneDay}
+                </div>  
+            </div>
         </div>
     )
 }
