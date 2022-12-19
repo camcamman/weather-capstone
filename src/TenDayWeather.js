@@ -61,10 +61,10 @@ export default function TenDayWeather () {
 
     return(
         <div>
-            {/* <div className="TenDayZipButtonDivHead"> */}
+            {/* <div className="flexCenter"> */}
                 <Link to="/">
                     <div className="TenDayZipButtonDiv">
-                        <button className="oneDayWeatherZipButton buttonTransition">Re Enter Zip</button>
+                        <button className="tenDayWeatherZipButton buttonTransitionTwo flexCenter">Re Enter Zip</button>
                     </div>
                 </Link> 
             {/* </div> */}

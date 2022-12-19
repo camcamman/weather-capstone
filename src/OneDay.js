@@ -47,7 +47,9 @@ export default function OneDay () {
     return(
         <div>
             <Link to={`/tenDayWeather/${zipDate.zip}`}>
-            <button className="oneDayMainButton buttonTransition">Go Back</button>
+                <div className="oneDayMainButtonDiv">
+                   <button className="oneDayMainButton buttonTransition">Go Back</button>
+                </div>
             </Link>
             <p className="oneDayMainDate">{zipDate.date}</p>
             <div className="oneDayMainDivHeadDiv">
