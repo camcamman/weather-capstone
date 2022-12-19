@@ -15,12 +15,6 @@ body {
     background-color: #00B2FF;
 }
 
-/* homePage */
-/* .homeForm{
-    display: flex;
-    justify-content: center;
-} */
-
 .homeFormInput{
     width: 340px;
     height: 30px;
@@ -42,7 +36,6 @@ body {
 .homeButton{
     position: absolute;
 
-
     width: 600px;
     height: 100px;
 
@@ -59,7 +52,7 @@ body {
     background-color: #F3E990;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-} */
+} 
 
 .WrongZipText{
     position: absolute;
@@ -96,7 +89,7 @@ body {
     font-weight: 700;
 }
 
-.oneDayWeatherZipButton{
+.tenDayWeatherZipButton{
     position: absolute;
 
     top: 32px;
@@ -108,6 +101,28 @@ body {
     font-size: 14px;
     font-weight: 700;
 
+    padding-top: 5000px;
+}
+
+.buttonTransitionTwo{
+    background-color: yellow;
+    border: solid black 2.3px;
+
+    padding: 15px 25px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    padding-top: 40px;
+}
+.buttonTransitionTwo:hover {background-color: #EAD949}
+    
+.buttonTransitionTwo:active {
+    background-color: #F3E990;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .buttonTransition{
@@ -201,7 +216,7 @@ a:active {
     font-weight: 600;
     font-size: 13px;
 
-    background-color: yellow;
+    /* background-color: yellow;
     border: solid black 2.3px;
 
     padding: 15px 25px;
@@ -211,7 +226,7 @@ a:active {
     border: none;
 
     border-radius: 15px;
-    box-shadow: 0 5px #999;
+    box-shadow: 0 5px #999; */
 }
 
 .oneDayMainDate{
@@ -225,9 +240,9 @@ a:active {
 /* moble home page  */
 @media screen and (max-width: 1000px) {
     /* body and head */
-    body{
+    /* body{
         background-color: aqua;
-    }
+    } */
 
     .headImg{
         display: none;
@@ -245,13 +260,12 @@ a:active {
     /* home page  */
     
     .homeFormInput{
-        margin-top: 200px;
-        margin-right: 0%;
+        margin-top: 260px;
+        width: 50%;
     }
     
     .homeButton{
-        position: absolute;
-        width: 450px;
+        width: 70%;
         top: 340px;
     }   
     
@@ -273,10 +287,6 @@ a:active {
         margin-top: 110px;
     }
 
-    .tenDayLinkToOneDayWeather:hover {
-        background-color: #0E459B;
-    }
-
     .mobleMargin{
         border-top: 55px #00B2FF solid;
     }
@@ -286,16 +296,20 @@ a:active {
         justify-content: center;
     }
     
-    .oneDayWeatherZipButton{
+    .tenDayWeatherZipButton{
         position: relative;
         top: 110px;
-        left: 2%;
-        width: 464px;
+        left: 0%;
+        width: 300px;
         height: 65px;
         font-size: 15px;
     }
 
+    .buttonTransitionTwo{
+        padding-top: 24.3px;
+    }
     /* one day weather page */
+
     .oneDayMainDiv{
         display: flex;
         flex-direction: column;
@@ -305,22 +319,34 @@ a:active {
     .oneDayMainDivHeadDiv{
         display: flex;
         justify-content: center;
+        left: 0%;
         
         margin-top: 124px;
     }
+
+    .oneDayMainButtonDiv{
+        display: flex;
+        justify-content: center;
+    }
     
     .oneDayMainButton{
-        position: absolute;
+        /* position: absolute; */
         top: 130px;
-        left: 94px;
+        left: auto;
         height: 58px;
         width: 319px;
+        display: flex;
+        justify-content: center;
     }
     /* all done ^ */
     
     .oneDayMainDate{
         font-size: 30px;
         font-weight: 900;
-        margin-left: 30px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        bottom: 11px;
+        /* margin-left: 30px; */
     }
 }
